@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using NUnit.Framework;
+using SuperFindPlugin;
 
 [TestFixture]
 public class SuperFindTests {
@@ -14,7 +15,7 @@ public class SuperFindTests {
     }
 
     [Test]
-    public void FindsByExactName() {
+    public void FindsByExactName_Root() {
         SuperFindTestHelpers.CreateSceneWithRoot();
 
         var result = SuperFind.Find("Root");
@@ -68,5 +69,68 @@ public class SuperFindTests {
         var result = SuperFind.Find("Root Child");
 
         Assert.AreEqual("Child", result.name);
+    }
+
+    [Test]
+    public void FindsBySiblingNotation_SiblingScene_First() {
+        var target = SuperFindTestHelpers.CreateSiblingScene(6, 0);
+
+        var result = SuperFind.Find("Child(Clone):first");
+
+        Assert.AreSame(target, result);
+    }
+
+    [Test]
+    public void FindsBySiblingNotation_SiblingScene_Last() {
+        var target = SuperFindTestHelpers.CreateSiblingScene(6, 5);
+
+        var result = SuperFind.Find("Child(Clone):last");
+
+        Assert.AreEqual(target, result);
+    }
+
+    [Test]
+    public void FindsBySiblingNotation_SiblingScene_Index0() {
+        var target = SuperFindTestHelpers.CreateSiblingScene(6, 0);
+
+        var result = SuperFind.Find("Child(Clone):0");
+
+        Assert.AreEqual(target, result);
+    }
+
+    [Test]
+    public void FindsBySiblingNotation_SiblingScene_Index3() {
+        var target = SuperFindTestHelpers.CreateSiblingScene(6, 3);
+
+        var result = SuperFind.Find("Child(Clone):3");
+
+        Assert.AreEqual(target, result);
+    }
+
+    [Test]
+    public void FindsBySiblingNotation_SiblingScene_Index5() {
+        var target = SuperFindTestHelpers.CreateSiblingScene(6, 5);
+
+        var result = SuperFind.Find("Child(Clone):5");
+
+        Assert.AreEqual(target, result);
+    }
+
+    [Test]
+    public void FindsBySiblingNotation_MultipleSiblingsScene_3() {
+        var target = SuperFindTestHelpers.CreateMultipleSetsofSiblingsScene(3, 6, 3);
+
+        var result = SuperFind.Find("Child(Clone):3");
+
+        Assert.AreSame(target, result);
+    }
+
+    [Test]
+    public void FindsBySiblingNotation_MultipleSiblingsScene_5() {
+        var target = SuperFindTestHelpers.CreateMultipleSetsofSiblingsScene(3, 6, 5);
+
+        var result = SuperFind.Find("Child(Clone):5");
+
+        Assert.AreSame(target, result);
     }
 }

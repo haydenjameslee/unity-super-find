@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using NUnit.Framework;
+using SuperFindPlugin;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
