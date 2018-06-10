@@ -1,6 +1,6 @@
 # SuperFind
 
-SuperFind is a Unity plugin to replace the built-in GameObject.Find method. SuperFind allows you to find inactive GameObjects, use powerful selectors which make finding a GameObject much simpler, and gives you a FindAll method to find all GameObjects that match your query.
+SuperFind is an open-source Unity plugin to replace the GameObject.Find method. SuperFind allows you to find inactive GameObjects, use powerful selectors which make finding a GameObject much simpler and easy to maintain, and gives you a FindAll method to find all GameObjects that match your query.
 
 **Warning**: SuperFind is approximately 10x slower than Unity's (already slow) GameObject.Find method. As with GameObject.Find, you should not use SuperFind in an update loop or any other performance sensitive code path.
 
