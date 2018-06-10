@@ -2,7 +2,11 @@
 
 ## Description
 
+TODO
+
 ## Installation
+
+TODO
 
 ## Documentation
 
@@ -12,13 +16,13 @@
 
 `GameObject found = SuperFind.Find(string selector);`
 
-Returns the GameObject that first matches the given selector string, including inactive GameObjects. If no GameObjects matche the selector string `null` is returned.
+Returns the GameObject that first matches the given selector string, including inactive GameObjects. If no GameObjects match the selector string, `null` is returned.
 
 #### SuperFind.FindAll
 
 `GameObject[] found = SuperFind.FindAll(string selector);`
 
-Returns all the GameObjects that match the given selector string, including inactive GameObjects. If no GameObjects match the selector string,the returned list will be empty.
+Returns all the GameObjects that match the given selector string, including inactive GameObjects. If no GameObjects match the selector string, the returned list will be empty.
 
 ### Selectors
 
