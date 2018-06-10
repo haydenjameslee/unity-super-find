@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +30,7 @@ namespace SuperFindPlugin
 
         private void Descend(INode node) {
             _visitor.Visit(node);
+
             if (_visitor.DoShortCircuit()) {
                 return;
             }
