@@ -28,31 +28,31 @@ Returns all the GameObjects that match the given selector string, including inac
 
 Each SuperFind method takes a selector string to target the GameObject(s) you're trying to find. Selector strings can combine any of the following features.
 
-#### By name
+* **By name**
 
 Similarly to `GameObject.Find`, pass the exact name of the GameObject.
 
 Eg. `SuperFind.Find("Child");`
 
-#### By ascendant
+* **By ascendant**
 
 Pass any number of ascendant's names (in order from furthest to closest) each followed by a space and finish with the name of the GameObject (plus a sibling index if wanted).
 
 Eg. `SuperFind.Find("Grandparent Child"); // Returns a Child with a GameObject named Grandparent as an ascendant`
 
-#### By sibling index
+* **By sibling index**
 
 Add a colon and the sibling index of the GameObject you want to find after the name of the GameObject.
 
 Eg. `SuperFind.Find("Enemy(Clone):3"); // Returns the 4th Enemy in a list of Enemy's`
 
-#### By first sibling
+* **By first sibling**
 
 Add `:first` after the GameObject's name to find the first GameObject of that name in a list of GameObjects with that name.
 
 Eg. `SuperFind.Find("Enemy(Clone):first"); // Returns the first Enemy in a list of Enemy's`
 
-#### By last sibling
+* **By last sibling**
 
 Add `:last` after the GameObject's name to find the last GameObject of that name in a list of GameObjects with that name.
 
