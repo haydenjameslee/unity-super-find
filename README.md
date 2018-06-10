@@ -8,7 +8,10 @@ SuperFind allows you to find inactive GameObjects, use powerful selectors which 
 
 ## Installation
 
-TODO
+1. Download the latest package in the [releases archive](https://github.com/haydenjameslee/unity-super-find/releases)
+2. Open your Unity project
+3. Double click on the downloaded package from step 1
+4. Import all the files into your project
 
 ## Documentation
 
