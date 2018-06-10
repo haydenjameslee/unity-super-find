@@ -33,6 +33,16 @@ public class SuperFindTests {
     }
 
     [Test]
+    public void FindsByExactName_Root_Inactive() {
+        SuperFindTestHelpers.CreateSceneWithRoot();
+        GameObject.Find("Root").SetActive(false);
+
+        var result = SuperFind.Find("Root");
+
+        Assert.AreEqual("Root", result.name);
+    }
+
+    [Test]
     public void FindsByChildNotaton_DeepScene() {
         SuperFindTestHelpers.CreateDeepScene();
 
@@ -51,16 +61,6 @@ public class SuperFindTests {
     }
 
     [Test]
-    public void FindsByExactName_Root_Inactive() {
-        SuperFindTestHelpers.CreateSceneWithRoot();
-        GameObject.Find("Root").SetActive(false);
-
-        var result = SuperFind.Find("Root");
-
-        Assert.AreEqual("Root", result.name);
-    }
-
-    [Test]
     public void FindsByChildNotaton_DeepScene_Inactive() {
         SuperFindTestHelpers.CreateDeepScene();
         GameObject.Find("Child").SetActive(false);
@@ -72,7 +72,7 @@ public class SuperFindTests {
     }
 
     [Test]
-    public void FindsBySiblingNotation_SiblingScene_First() {
+    public void FindsBySiblingNotation_SiblingScene_first() {
         var target = SuperFindTestHelpers.CreateSiblingScene(6, 0);
 
         var result = SuperFind.Find("Child(Clone):first");
@@ -81,7 +81,7 @@ public class SuperFindTests {
     }
 
     [Test]
-    public void FindsBySiblingNotation_SiblingScene_Last() {
+    public void FindsBySiblingNotation_SiblingScene_last() {
         var target = SuperFindTestHelpers.CreateSiblingScene(6, 5);
 
         var result = SuperFind.Find("Child(Clone):last");
