@@ -1,6 +1,6 @@
 # SuperFind
 
-A slow version of Unity's GameObject.Find that allows for CSS-like selectors and handles inactive GameObjects.
+A replacement for Unity's GameObject.Find that supports CSS-like selectors and inactive GameObjects.
 
 SuperFind allows you to find inactive GameObjects, use powerful selectors which make finding a GameObject much simpler and easy to maintain, and gives you a FindAll method to find all GameObjects that match your query.
 
