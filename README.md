@@ -6,6 +6,8 @@ SuperFind allows you to find inactive GameObjects, use powerful selectors which 
 
 **Warning**: SuperFind is approximately 10x slower than Unity's (already slow) GameObject.Find method. As with GameObject.Find, you should not use SuperFind in an update loop or any other performance sensitive code path.
 
+**2nd Warning**: GameObject's with spaces in their names are currently not supported.
+
 ## Installation
 
 1. Download the latest .unitypackage in the [releases archive](https://github.com/haydenjameslee/unity-super-find/releases)
@@ -31,7 +33,7 @@ Returns all the GameObjects that match the given selector string, including inac
 
 ### Selectors
 
-Each SuperFind method takes a selector string to target the GameObject(s) you're trying to find. Selector strings can combine any of the following features.
+Each SuperFind method takes a selector string to target the GameObject(s) you're trying to find. Selector strings can combine any of the following features. Please note that GameObject's with spaces in their name are not currently supported.
 
 * **By name**
 
