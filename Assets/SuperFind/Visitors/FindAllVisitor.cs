@@ -21,7 +21,7 @@ namespace SuperFindPlugin
             Visit(transformNode);
         }
 
-        public bool DoShortCircuit() {
+        public bool ShortCircuit() {
             return false;
         }
 

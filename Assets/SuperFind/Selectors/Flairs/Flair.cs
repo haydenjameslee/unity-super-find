@@ -15,14 +15,14 @@ namespace SuperFindPlugin
             bool isNumeric = int.TryParse(flairStr, out parsed);
             if (isNumeric) {
                 return new IndexFlair(parsed);
-            } else if (ValidateWord(flairStr)) {
+            } else if (IsValidWord(flairStr)) {
                 return new WordFlair(flairStr);
             } else {
                 throw new Exception("Flair " + flairStr + " is not a valid flair.");
             }
         }
 
-        public static bool ValidateWord(string word) {
+        public static bool IsValidWord(string word) {
             return Array.Exists(ValidWords, element => element == word);
         }
 

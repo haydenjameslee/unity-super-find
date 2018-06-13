@@ -20,13 +20,12 @@ namespace SuperFindPlugin
             Visit(transformNode);
         }
 
-        public bool DoShortCircuit() {
-            return false;
+        public bool ShortCircuit() {
+            return _result != null;
         }
 
         public void Visit(TransformNode node) {
             Transform transform = node.GetTransform();
-
             if (MatchesSelectors(transform)) {
                 _result = transform;
             }

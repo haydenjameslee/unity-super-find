@@ -3,6 +3,6 @@
     public interface IVisitor
     {
         void Visit(INode node);
-        bool DoShortCircuit();
+        bool ShortCircuit();
     }
 }

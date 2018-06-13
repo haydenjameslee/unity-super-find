@@ -18,13 +18,13 @@ namespace SuperFindPlugin
                 if (parent == null) {
                     GameObject[] roots = SceneManager.GetActiveScene().GetRootGameObjects();
                     foreach (GameObject go in roots) {
-                        if (go.name == name) {
+                        if (name == Constants.Wildcard || go.name == name) {
                             return go.transform == toMatch;
                         }
                     }
                 } else {
                     foreach (Transform child in parent) {
-                        if (child.gameObject.name == name) {
+                        if (name == Constants.Wildcard || child.name == name) {
                             return child == toMatch;
                         }
                     }
@@ -35,7 +35,7 @@ namespace SuperFindPlugin
                     GameObject[] roots = SceneManager.GetActiveScene().GetRootGameObjects();
                     Transform lastFound = null;
                     foreach (GameObject go in roots) {
-                        if (go.name == name) {
+                        if (name == Constants.Wildcard || go.name == name) {
                             lastFound = go.transform;
                         }
                     }
@@ -43,7 +43,7 @@ namespace SuperFindPlugin
                 } else {
                     Transform lastFound = null;
                     foreach (Transform child in parent) {
-                        if (child.gameObject.name == name) {
+                        if (name == Constants.Wildcard || child.name == name) {
                             lastFound = child;
                         }
                     }

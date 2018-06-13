@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SuperFindPlugin
 {
@@ -31,10 +30,14 @@ namespace SuperFindPlugin
 
         public bool Match(Transform transform) {
             if (_flair != null) {
-                return transform.name == _name && _flair.Match(transform, _name);
+                return MatchName(transform.name) && _flair.Match(transform, _name);
             } else {
-                return transform.name == _name;
+                return MatchName(transform.name);
             }
+        }
+
+        private bool MatchName(string nodeName) {
+            return _name == Constants.Wildcard || nodeName == _name;
         }
     }
 }

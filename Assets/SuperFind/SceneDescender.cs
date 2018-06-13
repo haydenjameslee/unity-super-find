@@ -25,13 +25,15 @@ namespace SuperFindPlugin
             for (int i = 0; i < roots.Length; i++) {
                 INode node = new TransformNode(roots[i].transform);
                 Descend(node);
+                if (_visitor.ShortCircuit()) {
+                    return;
+                }
             }
         }
 
         private void Descend(INode node) {
             _visitor.Visit(node);
-
-            if (_visitor.DoShortCircuit()) {
+            if (_visitor.ShortCircuit()) {
                 return;
             }
 
@@ -41,6 +43,9 @@ namespace SuperFindPlugin
                     throw new InvalidCastException("TransformNode to INode");
                 }
                 Descend(childNode);
+                if (_visitor.ShortCircuit()) {
+                    return;
+                }
             }
         }
     }
