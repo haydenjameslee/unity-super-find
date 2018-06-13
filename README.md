@@ -41,6 +41,12 @@ Similarly to `GameObject.Find`, pass the exact name of the GameObject.
 
 Eg. `SuperFind.Find("Child");`
 
+* **By wildcard**
+
+Use `*` instead of the GameObject's name to select a GameObject of any name.
+
+Eg. `SuperFind.FindAll("Parent *"); // Returns all the GameObjects under "Parent"`
+
 * **By ascendant**
 
 Pass any number of ascendant's names (in order from furthest to closest) each followed by a space and finish with the name of the GameObject (plus a sibling index if wanted).
@@ -64,6 +70,18 @@ Eg. `SuperFind.Find("Enemy(Clone):first"); // Returns the first Enemy in a list 
 Add `:last` after the GameObject's name to find the last GameObject of that name in a list of GameObjects with that name.
 
 Eg. `SuperFind.Find("Enemy(Clone):last"); // Returns the last Enemy in a list of Enemy's`
+
+* **By component**
+
+Add `:` + the component's name after the GameObject's name to find a GameObject with this Component (or MonoBehaviour)
+
+Eg. `SuperFind.FindAll("Tree:BoxCollider"); // Returns all Tree's with a BoxCollider`
+
+* **By multiple flairs**
+
+Add a component selector and a sibling selector to combine selectors.
+
+Eg. `SuperFind.Find("Tree:BoxCollider:first"); // Returns the first Tree with a BoxCollider`
 
 
 ## Examples
@@ -109,4 +127,46 @@ Eg. `SuperFind.Find("Enemy(Clone):last"); // Returns the last Enemy in a list of
 `SuperFind.FindAll("Three Mid:first Child:3");`
 
 ![SuperFind.FindAll("Three Mid:first Child:3");](https://i.imgur.com/bdsNUbM.png)
+
+* Ancestor & Wildcard
+
+`SuperFind.FindAll("Mid *");`
+
+![SuperFind.FindAll("Mid *");](https://i.imgur.com/N8Ehmij.png)
+
+* Ancestor & Wildcard
+
+`SuperFind.FindAll("Three *");`
+
+![SuperFind.FindAll("Three *");](https://i.imgur.com/RaXOSEF.png)
+
+* Component
+
+`SuperFind.Find("Child:BoxCollider");`
+
+![SuperFind.Find("Child:BoxCollider");](https://i.imgur.com/w2N3k2b.png)
+
+* Wildcard & Component
+
+`SuperFind.FindAll("*:BoxCollider");`
+
+![SuperFind.FindAll("*:BoxCollider");](https://i.imgur.com/K1A3Gg1.png)
+
+* Ancestor, Wildcard & Component
+
+`SuperFind.FindAll("Colliders *:BoxCollider");`
+
+![SuperFind.FindAll("Colliders *:BoxCollider");](https://i.imgur.com/GBCAnwe.png)
+
+* Find Ancestor, Wildcard, Component & Last Sibling
+
+`SuperFind.Find("Four *:BoxCollider:last");`
+
+![SuperFind.Find("Four *:BoxCollider:last");](https://i.imgur.com/6Nd1uzW.png)
+
+* FindAll Ancestor, Wildcard, Component & Last Sibling
+
+`SuperFind.FindAll("Four *:BoxCollider:last");`
+
+![SuperFind.FindAll("Four *:BoxCollider:last");](https://i.imgur.com/VxqjIUz.png)
 
