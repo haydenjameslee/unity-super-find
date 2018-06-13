@@ -1,0 +1,5 @@
+SuperFind Version 1.1.0
+
+https://github.com/haydenjameslee/unity-super-find
+
+MIT License
