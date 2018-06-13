@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 namespace SuperFindPlugin
 {
-    public class WordFlair : Flair {
-
+    public class WordFlair : Flair
+    {
         private string word;
 
         public WordFlair(string word) {

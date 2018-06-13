@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace SuperFindPlugin
 {
-    public abstract class Flair {
-
+    public abstract class Flair
+    {
         public static string[] ValidWords = {
             "first",
             "last",
@@ -18,7 +18,8 @@ namespace SuperFindPlugin
             } else if (IsValidWord(flairStr)) {
                 return new WordFlair(flairStr);
             } else {
-                throw new Exception("Flair " + flairStr + " is not a valid flair.");
+                return new ComponentFlair(flairStr);
+                //throw new Exception("Flair " + flairStr + " is not a valid flair.");
             }
         }
 
