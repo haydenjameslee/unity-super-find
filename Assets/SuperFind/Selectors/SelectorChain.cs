@@ -8,7 +8,12 @@ namespace SuperFindPlugin
         private List<Selector> _chain = new List<Selector>();
 
         public SelectorChain(string fullSelector) {
-            string[] selectors = fullSelector.Split(' ');
+            var regex = new System.Text.RegularExpressions.Regex("((?<Open>\")(?<Name>[^\"]*)(?<-Open>\"))|(?<Name>\\S+)");
+            var matches = regex.Matches(fullSelector);
+            string[] selectors = new string[matches.Count];
+            for (int i = 0; i < matches.Count; ++i) {
+                selectors[i] = matches[i].Groups["Name"].Value;
+            }
             for (int i = 0; i < selectors.Length; i++) {
                 var selector = Selector.FromString(selectors[i]);
                 _chain.Add(selector);
