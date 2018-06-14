@@ -21,13 +21,13 @@ SuperFind allows you to find inactive GameObjects, use powerful selectors which 
 
 `GameObject found = SuperFind.Find(string selector);`
 
-Returns the GameObject that first matches the given selector string, including inactive GameObjects. If no GameObjects match the selector string, `null` is returned.
+Returns the GameObject that first matches the given selector string in the active scene, including inactive GameObjects. If no GameObjects match the selector string, `null` is returned.
 
 #### SuperFind.FindAll
 
 `GameObject[] found = SuperFind.FindAll(string selector);`
 
-Returns all the GameObjects that match the given selector string, including inactive GameObjects. If no GameObjects match the selector string, the returned list will be empty.
+Returns all the GameObjects that match the given selector string in the active scene, including inactive GameObjects. If no GameObjects match the selector string, the returned list will be empty.
 
 ### Selectors
 
@@ -80,6 +80,15 @@ Eg. `SuperFind.FindAll("Tree:BoxCollider"); // Returns all Tree's with a BoxColl
 Add a component selector and a sibling selector to combine selectors.
 
 Eg. `SuperFind.Find("Tree:BoxCollider:first"); // Returns the first Tree with a BoxCollider`
+
+
+## Tests
+
+See the `SuperFind/Editor/` directory for a suite of unit tests. Run them in Unity by opening the Unity Test Runner (Window -> Test Runner) and clicking `Run All`.
+
+## Inspector
+
+Find the SuperFind Inspector in Unity by going to `Window -> SuperFindInspector`. This inspector can be used to test selectors in realtime.
 
 
 ## Examples
