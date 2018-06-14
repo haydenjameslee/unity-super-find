@@ -10,12 +10,9 @@ namespace SuperFindPlugin
         public SelectorChain(string fullSelector) {
             var regex = new System.Text.RegularExpressions.Regex("((?<Open>\")(?<Name>[^\"]*)(?<-Open>\"))|(?<Name>\\S+)");
             var matches = regex.Matches(fullSelector);
-            string[] selectors = new string[matches.Count];
-            for (int i = 0; i < matches.Count; ++i) {
-                selectors[i] = matches[i].Groups["Name"].Value;
-            }
-            for (int i = 0; i < selectors.Length; i++) {
-                var selector = Selector.FromString(selectors[i]);
+            for (int i = 0; i < matches.Count; i++) {
+                var selectorStr = matches[i].Groups["Name"].Value;
+                var selector = Selector.FromString(selectorStr);
                 _chain.Add(selector);
             }
         }
