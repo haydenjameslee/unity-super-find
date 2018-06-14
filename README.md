@@ -6,8 +6,6 @@ SuperFind allows you to find inactive GameObjects, use powerful selectors which 
 
 **Warning**: SuperFind is approximately 10x slower than Unity's (already slow) GameObject.Find method. As with GameObject.Find, you should not use SuperFind in an update loop or any other performance sensitive code path.
 
-**2nd Warning**: GameObject's with spaces in their names are currently not supported.
-
 ## Installation
 
 1. Download the latest .unitypackage in the [releases archive](https://github.com/haydenjameslee/unity-super-find/releases)
@@ -91,6 +89,12 @@ Eg. `SuperFind.Find("Tree:BoxCollider:first"); // Returns the first Tree with a 
 `SuperFind.Find("One");`
 
 ![SuperFind.Find("One");](https://i.imgur.com/7WPWqJT.png)
+
+* Exact name (with space)
+
+`SuperFind.Find("\"Colliders 2\"");`
+
+![SuperFind.Find("\"Colliders 2\"");](https://i.imgur.com/BhdNV6g.png)
 
 * Ascendant
 
