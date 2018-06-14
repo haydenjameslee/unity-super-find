@@ -72,4 +72,13 @@ public static class SuperFindTestHelpers {
         }
         return sublings2[returnIndex];
     }
+
+    public static void CreateSceneWithSpacesInName() {
+        EditorSceneManager.OpenScene("Assets/SuperFind/Empty.unity");
+        var root = new GameObject("Root With Spaces");
+        var middle = new GameObject("Middle With Spaces");
+        middle.transform.SetParent(root.transform);
+        var child = new GameObject("Child With Spaces");
+        child.transform.SetParent(middle.transform);
+    }
 }

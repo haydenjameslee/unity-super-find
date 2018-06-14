@@ -24,6 +24,15 @@ public class SuperFindTests {
     }
 
     [Test]
+    public void FindsByName_WithSpaces() {
+        SuperFindTestHelpers.CreateSceneWithSpacesInName();
+
+        var result = SuperFind.Find("\"Child With Spaces\"");
+
+        Assert.AreEqual("Child With Spaces", result.name);
+    }
+
+    [Test]
     public void FindsByExactName_DeepScene() {
         SuperFindTestHelpers.CreateDeepScene();
 
